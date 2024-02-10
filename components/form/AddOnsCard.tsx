@@ -17,6 +17,7 @@ import { Checkbox } from "../ui/checkbox";
 import { useFormContext } from "react-hook-form";
 import { FormSchemaType } from "@/types";
 import { useIsYearly } from "@/context/IsYearlyContextProvider";
+import { cn } from "@/lib/utils";
 
 const AddOnsCard = () => {
   const { isYearly } = useIsYearly();
@@ -48,7 +49,14 @@ const AddOnsCard = () => {
                           return (
                             <FormItem
                               key={addOn.id}
-                              className="flex flex-row items-center space-x-5 space-y-0 rounded-md p-5  outline outline-2 outline-[#D6D9E6]"
+                              className={cn(
+                                "flex flex-row items-center space-x-5 space-y-0 rounded-md p-5  outline outline-2 outline-[#D6D9E6]",
+                                {
+                                  "outline-[#022959]": field.value?.includes(
+                                    addOn.id
+                                  ),
+                                }
+                              )}
                             >
                               <FormControl>
                                 <Checkbox
