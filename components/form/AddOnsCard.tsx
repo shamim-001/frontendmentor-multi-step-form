@@ -63,10 +63,12 @@ const AddOnsCard = () => {
                                   checked={field.value?.includes(addOn.id)}
                                   onCheckedChange={(checked) => {
                                     return checked
-                                      ? field?.onChange([
-                                          ...field.value,
-                                          addOn.id,
-                                        ])
+                                      ? field?.onChange(
+                                          field.value && [
+                                            ...field.value,
+                                            addOn.id,
+                                          ]
+                                        )
                                       : field.onChange(
                                           field.value?.filter(
                                             (value) => value !== addOn.id
