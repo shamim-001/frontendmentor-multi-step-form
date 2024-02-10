@@ -16,14 +16,16 @@ import { addOns } from "@/constants";
 import { Checkbox } from "../ui/checkbox";
 import { useFormContext } from "react-hook-form";
 import { FormSchemaType } from "@/types";
+import { useIsYearly } from "@/context/IsYearlyContextProvider";
 
 const AddOnsCard = () => {
+  const { isYearly } = useIsYearly();
   const form = useFormContext<FormSchemaType>();
 
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Pick add-ons</CardTitle>
+        <CardTitle className="text-[#022959] ">Pick add-ons</CardTitle>
         <CardDescription>
           Add-ons help enhance your gaming experience.
         </CardDescription>
@@ -35,7 +37,7 @@ const AddOnsCard = () => {
             control={form.control}
             name="addOns"
             render={() => (
-              <FormItem>
+              <FormItem className="space-y-5">
                 {addOns.map((addOn) => {
                   return (
                     <div key={addOn.id}>
@@ -46,14 +48,14 @@ const AddOnsCard = () => {
                           return (
                             <FormItem
                               key={addOn.id}
-                              className="flex flex-row items-start space-x-3 space-y-0"
+                              className="flex flex-row items-center space-x-5 space-y-0 rounded-md p-5  outline outline-2 outline-[#D6D9E6]"
                             >
                               <FormControl>
                                 <Checkbox
                                   checked={field.value?.includes(addOn.id)}
                                   onCheckedChange={(checked) => {
                                     return checked
-                                      ? field.onChange([
+                                      ? field?.onChange([
                                           ...field.value,
                                           addOn.id,
                                         ])
@@ -65,8 +67,20 @@ const AddOnsCard = () => {
                                   }}
                                 />
                               </FormControl>
-                              <FormLabel className="text-sm font-normal">
-                                {addOn.label}
+                              <FormLabel className="flex w-full items-center justify-between text-sm font-normal">
+                                <div className="flex flex-col gap-2">
+                                  <span className="text-xl font-semibold text-[#022959]">
+                                    {addOn.label}
+                                  </span>
+                                  <span> {addOn.info} </span>
+                                </div>
+                                <div className="text-[#483EFF]">
+                                  {isYearly ? (
+                                    <> +${addOn.priceYearly}/yr </>
+                                  ) : (
+                                    <> +${addOn.priceMonthly}/mo </>
+                                  )}
+                                </div>
                               </FormLabel>
                             </FormItem>
                           );

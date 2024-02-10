@@ -19,7 +19,7 @@ const ThankYouCard = () => {
               height={50}
               width={50}
             />
-            <h1>Thank you!</h1>
+            <h1 className="text-[#022959] ">Thank you!</h1>
           </div>
         </CardTitle>
         <CardDescription>

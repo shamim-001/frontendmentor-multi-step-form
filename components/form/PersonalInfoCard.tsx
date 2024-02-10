@@ -23,7 +23,7 @@ const PersonalInfoCard = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Personal info</CardTitle>
+        <CardTitle className="text-[#022959]">Personal info</CardTitle>
         <CardDescription>
           Please provide your name, email address, and phone number.
         </CardDescription>
@@ -78,7 +78,7 @@ const PersonalInfoCard = () => {
               </div>
               <FormControl>
                 <Input
-                  type="number"
+                  type="tel"
                   placeholder="e.g. +1 234 567 890"
                   {...field}
                 />
