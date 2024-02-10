@@ -61,11 +61,11 @@ const FormSection = () => {
       <div className="md:hidden" />
       <div
         className={cn(
-          "relative md:static",
-          { "bottom-0": step === 1 },
-          { "-bottom-16": step === 2 },
-          { "-bottom-[9rem] ": step === 3 },
-          { "-bottom-3": step === 4 }
+          "md:static",
+          { static: step === 1 },
+          { "relative -bottom-16": step === 2 },
+          { "relative -bottom-[9rem] ": step === 3 },
+          { "relative -bottom-3": step === 4 }
         )}
       >
         <Form {...form}>
