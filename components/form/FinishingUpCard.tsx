@@ -28,8 +28,8 @@ const FinishingUpCard = () => {
     : selectedPlan?.priceMonthly;
 
   // Selected addons
-  const selectedAddOns = addOns.filter((addOn) =>
-    values.addOns.includes(addOn.id)
+  const selectedAddOns = addOns.filter(
+    (addOn) => values.addOns?.includes(addOn.id) ?? false
   );
   const selectedAddOnsPriceList = selectedAddOns.map((addOn) =>
     isYearly ? addOn.priceYearly : addOn.priceMonthly
