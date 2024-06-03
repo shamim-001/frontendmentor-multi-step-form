@@ -9,9 +9,6 @@ This project is a solution to the Multi-step form challenge from [Frontend Mento
 - [Technologies Used](#technologies-used)
 - [Features](#features)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Demo
 
@@ -20,9 +17,11 @@ You can view the live demo of the Multi-step Form [here](https://frontendmentor-
 ## Screenshots
 
 ![Desktop View](multi-step-form-desktop.png)
+
 _Desktop view of the multi-step form._
 
 ![Mobile View](multi-step-form-mobile.png)
+
 _Mobile view of the multi-step form._
 
 ## Technologies Used
